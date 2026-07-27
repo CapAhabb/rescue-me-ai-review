@@ -1,0 +1,183 @@
+<!doctype html>
+<!-- Copyright (c) 2026 Michael E. Anderson. All Rights Reserved. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Rescue Me is an intelligent incident monitoring and predictive search platform."
+    >
+    <title>Rescue Me | Incident Command Console</title>
+    <link rel="stylesheet" href="./styles.css?v=3">
+  </head>
+  <body>
+    <main class="bezel-shell">
+      <section class="device" aria-label="Rescue Me command console">
+        <div class="brand-plate" aria-label="Lake Command property mark">
+          <span>Lake Command</span>
+          <strong>RescueGuard Pro</strong>
+          <em>Great Lakes SAR Console</em>
+        </div>
+        <span class="screw screw-tl"></span>
+        <span class="screw screw-tr"></span>
+        <span class="screw screw-bl"></span>
+        <span class="screw screw-br"></span>
+        <span class="grip grip-left"></span>
+        <span class="grip grip-right"></span>
+        <section class="screen">
+          <header class="top-status">
+            <strong><span>Lake Command</span> RescueGuard</strong>
+            <label class="mission-select">
+              <span>Mission</span>
+              <select id="mission">
+                <option value="shoreline">Shoreline SAR</option>
+                <option value="vessel">Overdue Vessel</option>
+                <option value="weather">Weather Closure</option>
+                <option value="exposure">Cold Exposure</option>
+              </select>
+            </label>
+            <nav class="status-icons" aria-label="System status">
+              <span class="home-icon">HOME</span>
+              <span class="bars" aria-label="Signal strength"></span>
+              <span class="battery" aria-label="Battery level"></span>
+            </nav>
+          </header>
+
+          <section class="console-grid">
+            <section class="chart" id="map" aria-label="Predictive search chart">
+              <svg
+                id="bathymetryLayer"
+                class="bathymetry-layer"
+                viewBox="0 0 1000 620"
+                preserveAspectRatio="none"
+                aria-label="Lake Michigan NOAA bathymetry contours"
+              ></svg>
+              <div class="heat heat-a"></div>
+              <div class="heat heat-b"></div>
+              <div class="chart-grid"></div>
+              <div id="bathymetryStatus" class="bathymetry-status">Loading NOAA contours</div>
+              <div class="nav-warning">Visual aid only - not for navigation</div>
+              <div class="current current-a"></div>
+              <div class="current current-b"></div>
+              <div class="current current-c"></div>
+              <div class="search-cone"></div>
+              <div class="boat">▲</div>
+              <div class="datum">LKP</div>
+              <div class="asset asset-a">A1</div>
+              <div class="asset asset-b">B2</div>
+              <div class="note-marker">N</div>
+              <div class="risk risk-a"></div>
+              <div class="risk risk-b"></div>
+              <div class="chart-badge">BATHY</div>
+            </section>
+
+            <aside class="telemetry" aria-label="Mission telemetry">
+              <div>
+                <span>Search</span>
+                <strong id="status">Guarded</strong>
+              </div>
+              <div>
+                <span>Water</span>
+                <strong id="waterMetric">67.9°</strong>
+              </div>
+              <div>
+                <span>Wind</span>
+                <strong id="windMetric">3.1 mph</strong>
+              </div>
+              <div>
+                <span>Depth</span>
+                <strong id="depthMetric">NOAA</strong>
+              </div>
+              <div>
+                <span>GPS</span>
+                <strong>LIVE</strong>
+              </div>
+              <div>
+                <span>Teams</span>
+                <strong>0:2</strong>
+              </div>
+            </aside>
+          </section>
+
+          <nav class="mode-dock" aria-label="Operational layers">
+            <button data-layer="weather" class="mode" disabled>
+              <span>Weather</span>
+              <strong>N/A</strong>
+              <i></i>
+              <em>LIVE</em>
+            </button>
+            <button data-layer="water" class="mode" disabled>
+              <span>Thermal Risk</span>
+              <strong>N/A</strong>
+              <i></i>
+              <em>LIVE</em>
+            </button>
+            <button data-layer="wind" class="mode" disabled>
+              <span>Wind</span>
+              <strong>N/A</strong>
+              <i></i>
+              <em>LIVE</em>
+            </button>
+            <button data-layer="currents" class="mode" disabled>
+              <span>Drift</span>
+              <strong>N/A</strong>
+              <i></i>
+              <em>LIVE</em>
+            </button>
+            <button data-layer="bathymetry" class="mode active">
+              <span>Bathymetry</span>
+              <strong>5 m</strong>
+              <i></i>
+              <em>NOAA</em>
+            </button>
+            <button data-layer="assets" class="mode">
+              <span>Assets</span>
+              <strong>2</strong>
+              <i></i>
+              <em>AUTO</em>
+            </button>
+            <button data-layer="notes" class="mode">
+              <span>Incident Notes</span>
+              <strong>1</strong>
+              <i></i>
+              <em>AUTO</em>
+            </button>
+          </nav>
+        </section>
+
+        <aside class="hardware-menu" aria-label="Hardware menu">MENU</aside>
+        <aside class="hardware-controls" aria-label="Hardware controls">
+          <button type="button">RANGE</button>
+          <button type="button">MARK</button>
+          <button type="button">MOB</button>
+          <button type="button">DIM</button>
+        </aside>
+      </section>
+
+      <section class="mission-tray" aria-label="Decision support">
+        <article>
+          <h1>Rescue Me</h1>
+          <p>Intelligent Incident Monitoring & Predictive Search Platform</p>
+        </article>
+        <article class="assessment-panel">
+          <h2>Assessment</h2>
+          <div id="assessment" class="assessment"></div>
+        </article>
+        <article class="timeline">
+          <h2>Incident Timeline</h2>
+          <ol id="timeline">
+            <li>04:00Z Lake Michigan bathymetry and shoreline files loaded.</li>
+            <li>04:02Z live weather, water, wind, and drift feeds marked unavailable.</li>
+          </ol>
+        </article>
+      </section>
+
+      <footer>
+        Copyright &copy; 2026 Michael E. Anderson. All Rights Reserved.
+      </footer>
+    </main>
+
+    <script type="module" src="./main.js?v=3"></script>
+  </body>
+</html>

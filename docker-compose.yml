@@ -1,0 +1,16 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8088:8088"
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    ports:
+      - "4173:4173"
+    depends_on:
+      - backend
+
