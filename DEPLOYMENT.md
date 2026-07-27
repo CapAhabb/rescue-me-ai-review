@@ -1,5 +1,16 @@
 # Deployment
 
+## Live GitHub Pages Review
+
+This repo can be served directly from the `docs` folder with GitHub Pages:
+
+- Source branch: `main`
+- Source folder: `/docs`
+- Review URL: `https://capahabb.github.io/rescue-me-ai-review/`
+
+GitHub Pages hosts the static web console only. The backend/API review path is
+Docker or local Python.
+
 ## Free Vercel Frontend
 
 The static review console can run on Vercel's free tier.
@@ -25,4 +36,3 @@ Services:
 
 - `web`: static frontend on port `4173`
 - `backend`: Python API on port `8088`
-

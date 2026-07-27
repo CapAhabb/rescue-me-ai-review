@@ -2,6 +2,12 @@
 
 **Intelligent Incident Monitoring & Predictive Search Platform**
 
+Live review build:
+
+```text
+https://capahabb.github.io/rescue-me-ai-review/
+```
+
 Rescue Me is an AI-assisted emergency preparedness and incident response platform
 designed to improve situational awareness before, during, and after an emergency.
 
